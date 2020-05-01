@@ -1,0 +1,14 @@
+{
+  "extends": "stylelint-config-wordpress/scss",
+  "plugins": ["stylelint-order"],
+  "rules": {
+    "block-no-empty": null,
+    "indentation":null,
+    "color-hex-case":null,
+    "rule-empty-line-before":null,
+    "comment-empty-line-before":null,
+    "string-quotes":null,
+    "at-rule-empty-line-before":null,
+    "max-line-length":null
+  }
+}

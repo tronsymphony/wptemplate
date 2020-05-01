@@ -1,0 +1,17 @@
+{
+    "name": "urgeinteractive/Urge",
+    "authors": [
+        {
+            "name": "Joey Tavera",
+            "email": "joey@ibro.ws"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Urge\\": "src/"
+        }
+    },
+    "require": {
+        "nesbot/carbon": "^1.22"
+    }
+}

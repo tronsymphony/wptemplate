@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<meta charset="utf-8"/>
+</head>
+<body>
+
+<h1 id="carbon">Carbon</h1>
+
+<p><a href="https://packagist.org/packages/nesbot/carbon"><img src="https://poser.pugx.org/nesbot/carbon/v/stable.png" alt="Latest Stable Version" /></a>
+<a href="https://packagist.org/packages/nesbot/carbon"><img src="https://poser.pugx.org/nesbot/carbon/downloads.png" alt="Total Downloads" /></a>
+<a href="https://travis-ci.org/briannesbitt/Carbon"><img src="https://travis-ci.org/briannesbitt/Carbon.svg?branch=master" alt="Build Status" /></a>
+<a href="https://styleci.io/repos/5724990"><img src="https://styleci.io/repos/5724990/shield?style=flat" alt="StyleCI" /></a>
+<a href="https://codecov.io/github/briannesbitt/Carbon?branch=master"><img src="https://codecov.io/github/briannesbitt/Carbon/coverage.svg?branch=master" alt="codecov.io" /></a>
+<a href="https://php-eye.com/package/nesbot/carbon"><img src="https://php-eye.com/badge/nesbot/carbon/tested.svg?style=flat" alt="PHP-Eye" /></a></p>
+
+<p>A simple PHP API extension for DateTime. <a href="http://carbon.nesbot.com">http://carbon.nesbot.com</a></p>
+
+<pre><code class="php">use Carbon\Carbon;
+
+printf(&quot;Right now is %s&quot;, Carbon::now()-&gt;toDateTimeString());
+printf(&quot;Right now in Vancouver is %s&quot;, Carbon::now('America/Vancouver'));  //implicit __toString()
+$tomorrow = Carbon::now()-&gt;addDay();
+$lastWeek = Carbon::now()-&gt;subWeek();
+$nextSummerOlympics = Carbon::createFromDate(2012)-&gt;addYears(4);
+
+$officialDate = Carbon::now()-&gt;toRfc2822String();
+
+$howOldAmI = Carbon::createFromDate(1975, 5, 21)-&gt;age;
+
+$noonTodayLondonTime = Carbon::createFromTime(12, 0, 0, 'Europe/London');
+
+$worldWillEnd = Carbon::createFromDate(2012, 12, 21, 'GMT');
+
+// Don't really want to die so mock now
+Carbon::setTestNow(Carbon::createFromDate(2000, 1, 1));
+
+// comparisons are always done in UTC
+if (Carbon::now()-&gt;gte($worldWillEnd)) {
+    die();
+}
+
+// Phew! Return to normal behaviour
+Carbon::setTestNow();
+
+if (Carbon::now()-&gt;isWeekend()) {
+    echo 'Party!';
+}
+echo Carbon::now()-&gt;subMinutes(2)-&gt;diffForHumans(); // '2 minutes ago'
+
+// ... but also does 'from now', 'after' and 'before'
+// rolling up to seconds, minutes, hours, days, months, years
+
+$daysSinceEpoch = Carbon::createFromTimestamp(0)-&gt;diffInDays();
+</code></pre>
+
+<h2 id="installation">Installation</h2>
+
+<h3 id="withcomposer">With Composer</h3>
+
+<pre><code>$ composer require nesbot/carbon
+</code></pre>
+
+<pre><code class="json">{
+    &quot;require&quot;: {
+        &quot;nesbot/carbon&quot;: &quot;~1.21&quot;
+    }
+}
+</code></pre>
+
+<pre><code class="php">&lt;?php
+require 'vendor/autoload.php';
+
+use Carbon\Carbon;
+
+printf(&quot;Now: %s&quot;, Carbon::now());
+</code></pre>
+
+<a name="install-nocomposer"/>
+
+<h3 id="withoutcomposer">Without Composer</h3>
+
+<p>Why are you not using <a href="http://getcomposer.org/">composer</a>? Download <a href="https://github.com/briannesbitt/Carbon/blob/master/src/Carbon/Carbon.php">Carbon.php</a> from the repo and save the file into your project path somewhere.</p>
+
+<pre><code class="php">&lt;?php
+require 'path/to/Carbon.php';
+
+use Carbon\Carbon;
+
+printf(&quot;Now: %s&quot;, Carbon::now());
+</code></pre>
+
+<h2 id="docs">Docs</h2>
+
+<p><a href="http://carbon.nesbot.com/docs">http://carbon.nesbot.com/docs</a></p>
+
+</body>
+</html>
+

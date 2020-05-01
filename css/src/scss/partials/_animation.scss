@@ -1,0 +1,94 @@
+/* ANIMATION STYLES */
+// SCALE
+.fade-nun {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.fade-nun.animate {
+  animation: fade-nun 1.2s cubic-bezier(0.08, 0.75, 0.59, 0.99) forwards;
+}
+
+@keyframes fade-nun {
+  from {
+    opacity: 0;
+    transform: scale(0.86);
+    visibility: hidden;
+  }
+
+  to {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+  }
+}
+
+$transformNumber:40;
+
+// FADE UP
+.fade-up-stop {
+  opacity: 0;
+}
+.fade-up-stop.animate {
+  animation: fade-up-stop 2s cubic-bezier(0, 1.1, 0.65, 0.91) forwards;
+}
+
+
+
+@keyframes fade-up-stop {
+  from {
+    opacity: 0;
+    transform: matrix(1, 0, 0, 1, 0, $transformNumber);
+  }
+
+  to {
+    opacity: 1;
+    transform: matrix(1, 0, 0, 1, 0, 0);
+  }
+}
+
+
+// FADE LEFT
+
+.fade-left-stop {
+  opacity: 0;
+}
+.fade-left-stop.animate {
+  animation: fade-left-stop 2s cubic-bezier(0, 1.1, 0.65, 0.91) forwards;
+}
+
+@keyframes fade-left-stop {
+  from {
+    opacity: 0;
+    transform: matrix(1, 0, 0, 1, $transformNumber, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: matrix(1, 0, 0, 1, 0, 0);
+  }
+}
+
+
+// FADE RIGHT
+
+.fade-right-stop {
+  opacity: 0;
+}
+.fade-right-stop.animate {
+  animation: fade-right-stop 2s cubic-bezier(0, 1.1, 0.65, 0.91) forwards;
+}
+
+@keyframes fade-right-stop {
+  from {
+    opacity: 0;
+    transform: matrix(1, 0, 0, 1, -$transformNumber, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: matrix(1, 0, 0, 1, 0, 0);
+  }
+}
+
+

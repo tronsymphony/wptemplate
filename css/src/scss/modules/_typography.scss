@@ -1,0 +1,194 @@
+/* Typography */
+
+.container {
+	max-width: 1340px;
+	padding: 0 20px;
+}
+
+img.pic {
+	display: block;
+}
+
+$titleFont: 'Arapey', sans-serif;
+$bodyfont: 'rawline', sans-serif;
+$font-primary: $bodyfont;
+$btnFont: 'rawline', sans-serif;
+$font-secondary: $btnFont;
+$font-third: 'rawline', sans-serif;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: $titleFont;
+	font-weight: 300;
+	color: #2f4550;
+	margin: 0 0 10px;
+}
+
+p {
+	margin: 0 0 1.5rem;
+}
+
+body {
+	font-family: $bodyfont;
+	line-height: 28px;
+	font-weight: normal;
+	font-size: 16px;
+	color: rgba(68, 68, 68, 1);
+	letter-spacing: 0.2px;
+
+	line-height: 24px;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 16px;
+	color: rgba(112, 112, 112, 1);
+}
+h1.sec-title {
+	text-align: left;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 85px;
+	line-height: 90px;
+	color: white;
+	letter-spacing: 0.5px;
+	text-transform: uppercase;
+}
+h2.sec-title {
+	margin: 0 0 15px;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 65px;
+	line-height: 65px;
+	color: rgba(32, 40, 65, 1);
+	letter-spacing: 0.5px;
+}
+h2.sec-title {
+}
+
+input:focus {
+	outline: none;
+}
+
+a {
+	color: rgba(112, 112, 112, 1);
+	font-weight: 600;
+	text-decoration: underline;
+}
+
+span.subtitle {
+	font-weight: bold;
+	font-size: 16px;
+	color: #2ebcc2;
+	letter-spacing: 0.5px;
+	font-style: italic;
+	margin: 0 0 20px;
+	display: block;
+}
+
+span.linesvg svg {
+	display: inline-block;
+	height: 110px;
+	width: 7px;
+}
+
+span.linesvg {
+	display: flex;
+	margin: 0 auto 30px;
+	justify-content: center;
+	align-items: center;
+}
+
+@mixin selectStyles {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	width: 100%;
+	text-align: left;
+	padding: 12px 15px;
+
+	border: none;
+	box-shadow: none;
+	border-radius: 0;
+	background-color: transparent;
+
+	border: 1px solid rgb(8, 87, 165);
+	border-radius: 5px;
+
+	color: rgba($color: $color-main, $alpha: 1);
+
+	font-style: normal;
+	font-weight: bold;
+	font-size: 14px;
+	letter-spacing: 1px;
+}
+
+@mixin placeholderText {
+	color: rgba($color: $color-main, $alpha: 1);
+
+	font-style: normal;
+	font-weight: bold;
+	font-size: 14px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+input.form-control {
+	@include selectStyles;
+
+	&::placeholder {
+		@include placeholderText;
+	}
+
+	&:hover {
+		background-color: #fff;
+		box-shadow: 0 3px 11px 7px rgba(0, 0, 0, 0.11);
+		color: #37354a;
+		border-radius: 3px;
+
+		&::placeholder {
+			color: #37354a;
+		}
+	}
+}
+
+select.form-control {
+	background: transparent
+		url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'%3e%3cpath fill='%23343a40' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e")
+		no-repeat right 0.75rem center/8px 10px;
+	@include selectStyles;
+
+	&::placeholder {
+		@include placeholderText;
+	}
+
+	&:hover {
+		background-color: #fff;
+		box-shadow: 0 3px 11px 7px rgba(0, 0, 0, 0.11);
+		color: #37354a;
+		border-radius: 3px;
+		&::placeholder {
+			color: #37354a;
+		}
+	}
+}
+
+textarea {
+	@include selectStyles;
+	background: #533762;
+
+	&::placeholder {
+		@include placeholderText;
+	}
+
+	&:hover {
+		background-color: #fff;
+		box-shadow: 0 3px 11px 7px rgba(0, 0, 0, 0.11);
+		color: #37354a;
+		border-radius: 3px;
+		&::placeholder {
+			color: #37354a;
+		}
+	}
+}

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<meta charset="utf-8"/>
+</head>
+<body>
+
+<h1 id="changelog">CHANGELOG</h1>
+
+<h2 id="3.2.0">3.2.0</h2>
+
+<ul>
+<li> Added support for escaping <code>|</code> in plural translations with double pipe.</li>
+</ul>
+
+<h2 id="3.1.0">3.1.0</h2>
+
+<ul>
+<li> Deprecated the backup feature of the file dumper classes.</li>
+</ul>
+
+<h2 id="3.0.0">3.0.0</h2>
+
+<ul>
+<li> removed <code>FileDumper::format()</code> method.</li>
+<li> Changed the visibility of the locale property in <code>Translator</code> from protected to private.</li>
+</ul>
+
+<h2 id="2.8.0">2.8.0</h2>
+
+<ul>
+<li> deprecated FileDumper::format(), overwrite FileDumper::formatCatalogue() instead.</li>
+<li> deprecated Translator::getMessages(), rely on TranslatorBagInterface::getCatalogue() instead.</li>
+<li> added <code>FileDumper::formatCatalogue</code> which allows format the catalogue without dumping it into file.</li>
+<li> added option <code>json_encoding</code> to JsonFileDumper</li>
+<li> added options <code>as_tree</code>, <code>inline</code> to YamlFileDumper</li>
+<li> added support for XLIFF 2.0.</li>
+<li> added support for XLIFF target and tool attributes.</li>
+<li> added message parameters to DataCollectorTranslator.</li>
+<li> [DEPRECATION] The <code>DiffOperation</code> class has been deprecated and
+will be removed in Symfony 3.0, since its operation has nothing to do with &#8216;diff&#8217;,
+so the class name is misleading. The <code>TargetOperation</code> class should be used for
+this use-case instead.</li>
+</ul>
+
+<h2 id="2.7.0">2.7.0</h2>
+
+<ul>
+<li> added DataCollectorTranslator for collecting the translated messages.</li>
+</ul>
+
+<h2 id="2.6.0">2.6.0</h2>
+
+<ul>
+<li> added possibility to cache catalogues</li>
+<li> added TranslatorBagInterface</li>
+<li> added LoggingTranslator</li>
+<li> added Translator::getMessages() for retrieving the message catalogue as an array</li>
+</ul>
+
+<h2 id="2.5.0">2.5.0</h2>
+
+<ul>
+<li> added relative file path template to the file dumpers</li>
+<li> added optional backup to the file dumpers</li>
+<li> changed IcuResFileDumper to extend FileDumper</li>
+</ul>
+
+<h2 id="2.3.0">2.3.0</h2>
+
+<ul>
+<li> added classes to make operations on catalogues (like making a diff or a merge on 2 catalogues)</li>
+<li> added Translator::getFallbackLocales()</li>
+<li> deprecated Translator::setFallbackLocale() in favor of the new Translator::setFallbackLocales() method</li>
+</ul>
+
+<h2 id="2.2.0">2.2.0</h2>
+
+<ul>
+<li> QtTranslationsLoader class renamed to QtFileLoader. QtTranslationsLoader is deprecated and will be removed in 2.3.</li>
+<li> [BC BREAK] uniformized the exception thrown by the load() method when an error occurs. The load() method now
+throws Symfony\Component\Translation\Exception\NotFoundResourceException when a resource cannot be found
+and Symfony\Component\Translation\Exception\InvalidResourceException when a resource is invalid.</li>
+<li> changed the exception class thrown by some load() methods from \RuntimeException to \InvalidArgumentException
+(IcuDatFileLoader, IcuResFileLoader and QtFileLoader)</li>
+</ul>
+
+<h2 id="2.1.0">2.1.0</h2>
+
+<ul>
+<li> added support for more than one fallback locale</li>
+<li> added support for extracting translation messages from templates (Twig and PHP)</li>
+<li> added dumpers for translation catalogs</li>
+<li> added support for QT, gettext, and ResourceBundles</li>
+</ul>
+
+</body>
+</html>
+

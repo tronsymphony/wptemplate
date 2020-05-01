@@ -1,0 +1,56 @@
+/* ************************************************************************** */
+/* Media Queries ************************************************************ */
+/* ************************************************************************** */
+
+/* Med Breakpoint */
+@mixin isSmall {
+	@media screen and (min-width: 500px) {
+		@content;
+	}
+}
+
+/* Med Breakpoint */
+@mixin isMedium {
+	@media screen and (min-width: 768px) {
+		@content;
+	}
+}
+
+/* Large Breakpoint */
+@mixin isLarge {
+	@media screen and (min-width: 992px) {
+		@content;
+	}
+}
+
+/* X-Large Breakpoint */
+@mixin isXLarge {
+	@media screen and (min-width: 1200px) {
+		@content;
+	}
+}
+
+/* Retina Breakpoint 5 */
+@mixin isRetina {
+	@media screen and (min-width: 1400px) {
+		@content;
+	}
+}
+
+/* Giant (iMac Status) Breakpoint */
+@mixin isGiant {
+	@media screen and (min-width: 2000px) {
+		@content;
+	}
+}
+
+/* ************************************************************************** */
+/* Section Layout *********************************************************** */
+/* ************************************************************************** */
+
+/* ************************************************************************** */
+/* Animation **************************************************************** */
+/* ************************************************************************** */
+@mixin linkFade {
+	transition: all 0.3s ease-in-out;
+}

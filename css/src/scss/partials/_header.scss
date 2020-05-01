@@ -1,0 +1,245 @@
+
+header#header-container {
+  position: relative;
+  z-index: 124;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  section.nav-container {
+    display: flex;
+    flex-direction: row;
+    max-width: 1340px;
+    margin: 0px auto;
+    padding: 30px 40px;
+    position: relative;
+    z-index: 232;
+
+    .logonav {
+      max-width: 180px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    a.nav-logo {
+      display: block;
+    }
+  }
+}
+
+nav.navdiv {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+
+  .closebutton {
+    display: none;
+  }
+
+  // Menu ul with items
+  .items {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    .menu-item {
+      position: relative;
+
+      // link dot
+      &:before {
+        content: close-quote;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0;
+        width: 3px;
+        height: 3px;
+        background: #0857a5;
+        border-radius: 50%;
+      }
+
+      // remove dot from last item
+      &:nth-last-child(1) {
+        &:before {
+          display: none;
+        }
+      }
+
+      // Current page item
+      &.current_page_item {
+        a.menulink {
+          color: darken($color: $color-main, $amount: 30);
+        }
+      }
+
+      // menu link
+      a.menulink {
+        text-decoration: none;
+        color: $color-main;
+        padding: 10px 10px;
+
+        &:hover {
+          color: darken($color: $color-main, $amount: 30);
+        }
+      }
+
+      // li dropdown
+      &.hasdropdown {
+        
+        // dropdown container
+        .dropmenu {
+          position: absolute;
+          opacity: 0;
+          visibility: hidden;
+          transition: all 0.3s;
+          width: 250px;
+          background: $f;
+          left: 0%;
+          top: 110%;
+
+          //dropdown ul
+          // first level
+          ul.dropmenuitems {
+            padding: 0;
+            margin: 0;
+            display: block;
+            grid-template-columns: 1fr 1fr;
+            list-style: none;
+
+            // Dropdown menu link
+            a.menulink {
+              &:hover {
+                background: $color-main;
+                color: $f;
+              }
+            }
+            
+            // Second Dropdown
+            .dropmenu {
+              left: 100%;
+              // second level
+              ul.dropmenuitems {
+                display: block;
+                
+
+              }
+            }
+          }
+        }
+      }
+
+      // hover over dropdown li
+      &:hover {
+        &.hasdropdown {
+          .dropmenu {
+            visibility: visible;
+            opacity: 1;
+
+            // Second dropdown
+            .dropmenu {
+              left: 100%;
+              opacity: 0;
+              transform: translateY(0);
+              top: 0;
+            }
+
+            .hasdropdown {
+              &:hover {
+                .dropmenu {
+                  top: 0%;
+                  opacity: 1;
+                  .dropmenu {
+                    opacity: 1;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+    }
+  }
+
+  // open close button for menu
+  span.bar {
+    display: block;
+    width: 30px;
+    height: 2px;
+    margin: 8px 0;
+    background: #37354a;
+    
+    &.activeitem {
+      width: 30px;
+      position: relative;
+      height: 30px;
+      top: 5px;
+      span.bar:nth-child(1) {
+        transform: rotate(45deg);
+        top: 0px;
+      }
+      span.bar:nth-child(2) {
+        transform: rotate(-45deg);
+      }
+      span.bar:nth-child(3) {
+        display: none;
+      }
+      span.bar {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1320px) {
+}
+
+@media screen and (max-width: 1200px) {
+}
+
+@media screen and (max-width: 992px) {
+
+
+
+  nav.navdiv {
+    .navbaritems{
+      display: none;
+  
+      &.activemenu{
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: $f;
+        width: 100%;
+      }
+    }
+    
+    .closebutton {
+      position: relative;
+      top: 0px;
+      right: 0px;
+      z-index: 9123;
+      display: block;
+    }
+    ul.items {
+      flex-direction: column;
+      li.menu-item:hover.hasdropdown {
+        .dropmenu {
+          position: relative;
+        }
+      }
+    }
+  }
+
+}
+
+@media screen and (max-width: 600px) {
+
+}

@@ -1,0 +1,31 @@
+/*
+    Use the command "npm install" in the theme directory to install these packages
+*/
+
+
+// Bootstrap
+@import '../../../../node_modules/bootstrap/scss/functions';
+
+@import '../../../../node_modules/bootstrap/scss/variables';
+@import '../../../../node_modules/bootstrap/scss/mixins';
+
+@import '../../../../node_modules/bootstrap/scss/type';
+@import '../../../../node_modules/bootstrap/scss/reboot';
+
+@import '../../../../node_modules/bootstrap/scss/mixins';
+@import '../../../../node_modules/bootstrap/scss/grid';
+
+// Slick Carousel
+@import '../../../../node_modules/slick-carousel/slick/slick';
+@import '../../../../node_modules/slick-carousel/slick/slick-theme';
+
+
+// @import 'wp';
+
+@import 'header';
+@import 'interior';
+@import 'buttons';
+@import 'sections';
+@import 'footer';
+@import 'animation';
+@import 'responsive';
